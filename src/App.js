@@ -1,15 +1,23 @@
 import './App.css';
-import { Route, Switch } from 'react-router-dom'
+import {
+  Route,
+  Switch
+} from 'react-router-dom'
 
-import React, { Component } from 'react'
+import React, {
+  Component
+} from 'react'
 import HomePage from './pages/homepage/homepage-component.jsx'
 import ShopPage from './pages/shop/shop-component'
 import Header from './components/header/header-component'
 import SignInPage from './pages/sign-in-sign-up/sign-in-sign-up-component'
-import { auth } from './firebase/firebase.utils'
+import {
+  auth,
+  createUserProfileDocument
+} from './firebase/firebase.utils'
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -20,12 +28,24 @@ class App extends Component {
   unsubscribe = null
 
   componentDidMount() {
-    this.unsubscribe = auth.onAuthStateChanged(user => {
-      this.setState({
-        currentUser: user
-      })
+    this.unsubscribe = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          })
+        })
+      } else {
+        this.setState({
+          currentUser: userAuth
+        })
+      }
     })
-    
   }
 
   componentWillUnmount() {
@@ -33,15 +53,32 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Header currentUser={this.state.currentUser }/>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={ShopPage} />
-          <SignInPage exact path="/sign-in" component={SignInPage} />
-        </Switch>
-    </div>
+    return ( <
+      div >
+      <
+      Header currentUser = {
+        this.state.currentUser
+      }
+      /> <
+      Switch >
+      <
+      Route exact path = "/"
+      component = {
+        HomePage
+      }
+      /> <
+      Route exact path = "/shop"
+      component = {
+        ShopPage
+      }
+      /> <
+      SignInPage exact path = "/sign-in"
+      component = {
+        SignInPage
+      }
+      /> <
+      /Switch> <
+      /div>
     )
   }
 }

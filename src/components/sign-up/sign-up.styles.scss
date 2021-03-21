@@ -1,0 +1,18 @@
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+
+  .title {
+    margin: 10px 0;
+  }
+}
+
+.not-match{
+  background-color: #ff1c1c;
+  color: white;
+  width: 80%;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 3px;
+}
