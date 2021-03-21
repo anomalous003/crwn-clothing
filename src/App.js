@@ -32,7 +32,7 @@ class App extends Component {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
-        userRef.onSnapshot(snapShot => {
+        await userRef.onSnapshot(snapShot => {
           this.setState({
             currentUser: {
               id: snapShot.id,
@@ -53,32 +53,23 @@ class App extends Component {
   }
 
   render() {
-    return ( <
-      div >
-      <
-      Header currentUser = {
-        this.state.currentUser
-      }
-      /> <
-      Switch >
-      <
-      Route exact path = "/"
-      component = {
-        HomePage
-      }
-      /> <
-      Route exact path = "/shop"
-      component = {
-        ShopPage
-      }
-      /> <
-      SignInPage exact path = "/sign-in"
-      component = {
-        SignInPage
-      }
-      /> <
-      /Switch> <
-      /div>
+    return (
+      <div>
+        <Header currentUser={
+            this.state.currentUser
+        } />
+       <Switch>
+          <Route
+            exact path="/"
+            component={HomePage} />
+          <Route
+            exact path="/shop"
+            component={ShopPage} />
+          <SignInPage
+            exact path="/sign-in"
+            component={SignInPage}/> 
+        </Switch> 
+      </div>
     )
   }
 }
