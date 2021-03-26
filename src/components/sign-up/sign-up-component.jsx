@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
 import FormInput from '../form-input/form-input-component'
-import CustomButton from '../custom-button/coustom-button-component'
+import CustomButton from '../custom-button/custom-button-component'
 import './sign-up.styles.scss'
 
 export class SignUp extends Component {
@@ -69,7 +69,7 @@ export class SignUp extends Component {
         <span>Sign up with email and password</span>
         
         {!this.state.match ? 
-        (<div className='not-match'>Password didn't match</div>): null}
+        (<div className='not-match'>*Password didn't match</div>): null}
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
