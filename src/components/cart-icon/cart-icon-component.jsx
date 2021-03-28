@@ -3,7 +3,7 @@ import './cart-icon.styles.scss'
 
 import { ReactComponent as ShoppingBag } from '../../assets/shopping-bag.svg'
 import { connect } from 'react-redux'
-import toggleCartDropdown from '../../redux/cart/cart-action'
+import toggleCartDropdown from '../../redux/cart/cart-dropdown-action'
 
 const CartIcon = ({ toggleDropdown }) => {
   return (
