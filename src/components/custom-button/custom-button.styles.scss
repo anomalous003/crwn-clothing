@@ -23,9 +23,19 @@
     border: 1px solid black;
   }
 
+  &.signIn{
+    border-radius: 30px;
+  }
+
+  &.sign-up{
+    border-radius: 30px;
+    padding: 0 166px;
+  }
+
   &.google-sign-in {
     background-color: #4285f4;
     color: white;
+    border-radius: 30px;
 
     &:hover {
       background-color: #357ae8;
