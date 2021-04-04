@@ -12,7 +12,7 @@ const StripButton = ({ price }) => {
 
   return (
     <StripeCheckout
-      name='CRWN Clothing Ltd.'
+      name='Clothing House Ltd.'
       description={`Your total is $${price}`}
       label='Pay Now'
       image='https://svgshare.com/i/CUz.svg'
@@ -20,7 +20,7 @@ const StripButton = ({ price }) => {
       billingAddress
       amount={priceForStripe}
       token={onToken}
-      panelLabel={`Pay $${price}`}
+      panelLabel={`Pay Now`}
       stripeKey={publishableKey}
     />
 
