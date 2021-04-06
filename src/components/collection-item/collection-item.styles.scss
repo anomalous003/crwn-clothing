@@ -14,7 +14,7 @@
     margin-bottom: 5px;
   }
 
-  .custom-button {
+  button {
     width: 80%;
     opacity: 0.7;
     position: absolute;
@@ -23,15 +23,17 @@
   }
 
   &:hover {
-    .image {
+    &:first-child{
       opacity: 0.8;
     }
 
-    .custom-button {
+    button {
       opacity: 0.85;
       display: flex;
+      border: none;
+      outline: none;
     }
-  }
+}
 
   .collection-footer {
     width: 100%;

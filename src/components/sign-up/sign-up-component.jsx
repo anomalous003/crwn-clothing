@@ -104,7 +104,7 @@ export class SignUp extends Component {
           handleChange={this.handleChange}
           required
           />
-          <CustomButton className='sign-up' type='submit'>Sign Up</CustomButton>
+          <CustomButton signUp type='submit'>Sign Up</CustomButton>
         </form>
       </div>
     )
