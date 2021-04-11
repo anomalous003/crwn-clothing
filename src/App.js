@@ -1,7 +1,7 @@
 import './App.css';
 
-import { Route, Switch, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { connect } from 'react-redux'
 import { selectCurrentUser } from './redux/user/user-selectors'

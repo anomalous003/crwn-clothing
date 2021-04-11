@@ -68,8 +68,11 @@ export class SignUp extends Component {
         <h2 className="title">I don't have an account</h2>
         <span>Sign up with email and password</span>
         
-        {!this.state.match ? 
-        (<div className='not-match'>*Password didn't match</div>): null}
+        {
+          !this.state.match ?
+          (<div className='not-match'>*Password didn't match</div>)
+          : null
+        }
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
