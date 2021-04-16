@@ -1,7 +1,7 @@
 import './cart-icon.styles.scss'
 
 import React from 'react'
-import toggleCartDropdown from '../../redux/cart/cart-dropdown-action'
+import {toggleCartDropdown} from '../../redux/cart/cart-actions'
 
 import { ReactComponent as ShoppingBag } from '../../assets/shopping-bag.svg'
 import { selectCartItemsCount } from '../../redux/cart/cart-selectors'

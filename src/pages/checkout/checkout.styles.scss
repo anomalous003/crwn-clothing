@@ -18,7 +18,14 @@
       width: 23%;
 
       &:last-child {
-        width: 8%;
+        width: 10%;
+        display: inline-block;
+        padding:6px 8px;
+        background-color: #D32F2F;
+        color: white;
+        cursor: pointer;
+        border-radius: 3px;
+
       }
     }
   }

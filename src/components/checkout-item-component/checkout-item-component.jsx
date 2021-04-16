@@ -2,9 +2,11 @@ import React from 'react'
 
 import './checkout-item.styles.scss'
 
-import removeItemFromCart from '../../redux/cart/remove-item-action'
-import addItemToCart from '../../redux/cart/add-item-action'
-import clearItem from '../../redux/cart/clear-item-action'
+import {
+  removeItemFromCart,
+  addItemToCart,
+  clearItem
+} from '../../redux/cart/cart-actions'
 
 import { connect } from 'react-redux'
 
