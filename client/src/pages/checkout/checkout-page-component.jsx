@@ -22,7 +22,7 @@ const CheckoutPage = ({ cartItems, total, clearCart}) => {
       {
         cartItems.map(cartItem => <CheckoutItem key={cartItem.id} cartItem={cartItem} />)
       }
-      <span className="total">TOTAL: ${total}</span>
+      <span className="total">TOTAL: ₹{total * 20}</span>
       <div className='test-warning'>
         *Please use the following for test credit card payments*
         <br/>
@@ -30,7 +30,7 @@ const CheckoutPage = ({ cartItems, total, clearCart}) => {
         <br />
         Exp: 01/24, CVV: 123
       </div>
-      <StripButton price={total}/>
+      <StripButton price={total * 20}/>
     </div>
   )
 }

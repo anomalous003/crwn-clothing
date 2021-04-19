@@ -17,7 +17,7 @@ const { name, price, imageUrl } = item;
       />
       <div className='collection-footer'>
         <span className='name'>{name}</span>
-        <span className="price">${price}</span>
+        <span className="price">₹{price * 20}</span>
       </div>
       <CustomButton collectionBtn onClick={() => addItem(item)}>GO TO CHECKOUT</CustomButton>
     </div>
