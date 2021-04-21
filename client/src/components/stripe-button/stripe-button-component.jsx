@@ -16,10 +16,8 @@ const StripButton = ({ price }) => {
       }
     }).then(response => {
       alert('Payment was Successful')
-      console.log(response);
     }).catch(error => {
       alert('Payment was unsuccessful')
-      console.log(error);
     })
   }
 
