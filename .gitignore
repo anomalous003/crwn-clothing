@@ -7,7 +7,7 @@
 /client/.pnp.js
 
 # testing
-/coverage
+/client/coverage
 
 # production
 /client/build
