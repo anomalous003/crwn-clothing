@@ -1,9 +1,35 @@
+$breakpoint-tablet:768px;
+
+@media screen and (max-width:$breakpoint-tablet) {
+  div.header{
+    height: 60px;
+    padding: 10px;
+    padding-right: 0;
+    margin-bottom: 18px;
+
+    .logo-container {
+      width: 50px;
+      padding: 0;
+    }
+    
+    div.options{
+      width: 80%;
+    }
+
+    div.options a.option {
+      padding: 10px;
+    }
+  }
+
+
+}
+
 .header {
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 
   .logo-container {
     height: 100%;
@@ -26,3 +52,4 @@
     }
   }
 }
+

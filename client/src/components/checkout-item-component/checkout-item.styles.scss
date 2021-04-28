@@ -1,3 +1,39 @@
+@media screen and (max-width:465px) {
+  div.checkout-item {
+    font-size: 17px;
+    text-align: center;
+
+    span.quantity{
+      display: flex;
+      justify-content: center;
+    }
+
+    .name,
+    .quantity,
+    .price {
+      width: 22%;
+    }  
+  }
+}
+
+@media screen and (min-width:465px) and (max-width:768px) {
+  div.checkout-item {
+    font-size: 20px;
+    text-align: center;
+
+    span.quantity {
+      display: flex;
+      justify-content: center;
+    }
+
+    .name,
+    .quantity,
+    .price {
+      width: 22%;
+    }
+  }
+}
+
 .checkout-item {
   width: 100%;
   display: flex;

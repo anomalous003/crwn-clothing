@@ -1,3 +1,10 @@
+@media screen and (max-width:768px) {
+  div.sign-in-and-sign-up {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .sign-in-and-sign-up {
   width: 850px;
   display: flex;

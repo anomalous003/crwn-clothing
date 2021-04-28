@@ -1,3 +1,16 @@
+@media screen and (max-width:768px) {
+  div.cart-dropdown {
+    width: 200px;
+    height: 300px;
+    top: 75px;
+    right: 30px;
+
+    button.custom-button:hover{
+      padding: 0 32px;
+    }
+  }
+}
+
 .cart-dropdown {
   position: absolute;
   width: 240px;

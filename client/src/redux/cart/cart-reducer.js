@@ -33,6 +33,11 @@ const cartReducer = (state = initialState, {type, payload}) => {
         ...state,
         cartItems: []
       })
+    case cartActionTypes.GET_CART_ITEMS_FROM_FIRESTORE:
+      return ({
+        ...state,
+        cartItems: payload
+      })
     default:
       return state;
   }

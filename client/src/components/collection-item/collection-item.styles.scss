@@ -1,3 +1,26 @@
+@media screen and (max-width:768px) {
+  div.collection-item {
+    width: 40vw;
+
+    button.custom-button{
+      display: block;
+      opacity: 0.9;
+      min-width: unset;
+      padding: 0 10px;
+    }
+
+    &:hover{
+      div.image{
+        opacity: unset;
+      }
+
+      button.custom-button {
+        opacity: unset;
+      }
+    }
+  }
+}
+
 .collection-item {
   width: 22vw;
   display: flex;
@@ -14,7 +37,7 @@
     margin-bottom: 5px;
   }
 
-  button {
+  .custom-button {
     width: 80%;
     opacity: 0.7;
     position: absolute;
@@ -23,17 +46,15 @@
   }
 
   &:hover {
-    &:first-child{
+    .image {
       opacity: 0.8;
     }
 
-    button {
+    .custom-button {
       opacity: 0.85;
       display: flex;
-      border: none;
-      outline: none;
     }
-}
+  }
 
   .collection-footer {
     width: 100%;
@@ -44,11 +65,12 @@
 
     .name {
       width: 90%;
+      text-align: left;
       margin-bottom: 15px;
     }
 
     .price {
-      width: 10%;
+      text-align: right;
     }
   }
 }

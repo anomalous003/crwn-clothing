@@ -8,6 +8,10 @@ import {
 } from 'redux-saga/effects'
 
 import {
+  getCartItemsFromFirestore
+} from '../cart/cart-actions'
+
+import {
   signInSuccess,
   signInFailure,
   signOutFailure,
@@ -32,6 +36,9 @@ function* getSnapshotFromUserAuth(userAuth) {
       id: userSnapshot.id,
       ...userSnapshot.data()
     }))
+    yield put(getCartItemsFromFirestore(
+      userSnapshot.data().cartItems
+    ))
   } catch (error) {
     yield put(signInFailure(error.message))
   }

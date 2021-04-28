@@ -1,3 +1,24 @@
+@media screen and (max-width:768px) {
+  div.sign-in {
+    width: 95vw;
+    text-align: center;
+
+    form{
+        margin: 0 5vw;
+        
+        div.buttons{
+            display: flex;
+            flex-direction: column;
+
+            button.custom-button{
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+  }
+}
+
 .sign-in {
     width: 380px;
     display: flex;

@@ -30,7 +30,7 @@ const SignUp = ({ signUpStart }) => {
         match:false
       })
 
-      setInterval(() => {
+      setTimeout(() => {
         setUserCredentials({
           displayName: '',
           email: '',
@@ -98,7 +98,9 @@ const SignUp = ({ signUpStart }) => {
         handleChange={handleChange}
         required
         />
-        <CustomButton signUp type='submit'>Sign Up</CustomButton>
+        <div className="button">
+          <CustomButton className='signUp' type='submit'>Sign Up</CustomButton>
+        </div>
       </form>
     </div>
   )

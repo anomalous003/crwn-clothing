@@ -1,3 +1,15 @@
+@media screen and (max-width:768px) {
+  div.collection-preview {
+    align-items: center;
+
+    div.preview{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap:15px
+    }
+  }
+}
+
 .collection-preview {
   display: flex;
   flex-direction: column;
@@ -6,6 +18,7 @@
   .title {
     font-size: 28px;
     margin-bottom: 25px;
+    cursor: pointer;
   }
 
   .preview {

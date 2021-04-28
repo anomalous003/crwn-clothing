@@ -22,3 +22,13 @@ export const toggleCartDropdown = () => ({
 export const clearCart = () => ({
     type: cartActionTypes.CLEAR_CART
 })
+
+export const updateFirestoreCartItems = cartItems => ({
+    type: cartActionTypes.UPDATE_FIRESTORE_CART_ITEMS,
+    payload: cartItems
+})
+
+export const getCartItemsFromFirestore = cartItems => ({
+    type: cartActionTypes.GET_CART_ITEMS_FROM_FIRESTORE,
+    payload: cartItems
+})

@@ -1,3 +1,41 @@
+@media screen and (max-width:700px) {
+  div.checkout-page {
+    width: 95%;
+
+    div.checkout-header {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+
+      span.header-block{
+        &:last-child{
+          font-size: 15px;
+          letter-spacing: 0;
+          padding: 2px 1px;
+        }
+        
+        &:first-child{
+          text-align: left;
+        }
+
+        &:nth-child(3){
+          padding-left: 0;
+        }
+
+        &:nth-child(4) {
+          padding-left: 0;
+        }
+      }
+
+    }
+
+    span.total {
+      margin-top: 24px;
+      font-size: 30px;
+    }
+  }
+}
+
 .checkout-page {
   width: 55%;
   min-height: 90vh;
@@ -17,6 +55,14 @@
       text-transform: capitalize;
       width: 23%;
 
+      &:nth-child(3){
+        padding-left: 10px;
+      }
+
+      &:nth-child(4) {
+        padding-left: 15px;
+      }
+
       &:last-child {
         width: 11%;
         display: inline-block;
@@ -27,6 +73,7 @@
         border-radius: 3px;
         font-weight: 700;
         letter-spacing: .1px;
+        text-align: center;
 
         &:hover{
           background-color: #D32F2F;

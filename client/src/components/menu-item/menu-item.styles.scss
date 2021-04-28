@@ -1,3 +1,32 @@
+@media screen and (min-width:465px) and (max-width:700px) {
+  div.menu-item{
+    height: 200px;
+
+    &.large{
+      height: 200px;
+    }
+  }  
+}
+
+@media screen and (max-width:465px) {
+  div.menu-item {
+    height: 200px;
+
+    &.large {
+      height: 200px;
+    }
+
+    &:first-child,
+    &:nth-child(4) {
+      height: 240px;
+    }
+
+    &:nth-child(4) {
+      margin-top: -40px;
+    }
+  }
+}
+
 .menu-item {
   min-width: 30%;
   height: 240px;
@@ -7,7 +36,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 7.5px 15px;
-  border-radius: 1px;
+  border-radius: 2px;
   overflow: hidden;
 
   &.large{

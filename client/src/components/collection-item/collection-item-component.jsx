@@ -19,7 +19,7 @@ const { name, price, imageUrl } = item;
         <span className='name'>{name}</span>
         <span className="price">₹{price * 20}</span>
       </div>
-      <CustomButton collectionBtn onClick={() => addItem(item)}>GO TO CHECKOUT</CustomButton>
+      <CustomButton className='inverted' onClick={() => addItem(item)}>ADD TO CART</CustomButton>
     </div>
   )
 }

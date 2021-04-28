@@ -1,8 +1,34 @@
+@media screen and (max-width:768px) {
+  div.sign-up {
+    width: 95vw;
+    text-align: center;
+    margin-top: 30px;
+
+    form {
+      margin: 0 5vw;
+
+      .button{
+        display: flex;
+
+        .custom-button{
+          padding: 0;
+          width: 100%;
+        }
+      }
+    } 
+
+  }
+}
+
 .sign-up {
   display: flex;
   flex-direction: column;
   width: 380px;
 
+  div.button .custom-button {
+    padding: 0;
+    width: 100%;
+  }
   .title {
     margin: 10px 0;
   }

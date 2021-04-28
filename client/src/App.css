@@ -1,8 +1,25 @@
-body{
-    padding: 20px 60px; 
+@media screen and (max-width:768px) {
+  body {
+    padding: 8px;
+  }
 }
 
-a{
-    text-decoration: none;
-    color: black;
+@media screen and (min-width:768px) {
+  body {
+    padding: 20px 60px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.overlays{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.411);
 }

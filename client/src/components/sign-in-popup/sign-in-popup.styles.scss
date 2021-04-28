@@ -1,0 +1,43 @@
+.popup-container {
+  width: 300px;
+  height: 150px;
+  background-color: white;
+  box-shadow: 0px 6px 5px 0px #000000ad;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 12px;
+  z-index: 10;
+
+  .popup-message {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    margin-bottom: 2px;
+    margin-top: 25px;
+  }
+
+  .popup-buttons {
+    display: flex;
+    margin-top: 30px;
+    font-size: 18px;
+    justify-content: space-evenly;
+
+    .cancel,
+    .signIn-popup {
+      border: 1px solid #E1E5EE;
+      padding: 8px 40px;
+      border-radius: 30px;
+      background-color: #E1E5EE;
+      letter-spacing: .5px;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        padding: 6px 35px;
+      }
+    }
+  }
+}

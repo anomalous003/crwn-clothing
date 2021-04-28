@@ -1,10 +1,16 @@
 import './collection-preview.styles.scss'
+
 import CollectionItem from '../collection-item/collection-item-component'
 
-const CollectionPreview = ({ title, items, routeName }) => {
+import { withRouter } from 'react-router-dom'
+
+const CollectionPreview = ({ title, items, match, history }) => {
   return (
     <div className='collection-preview'>
-      <h1 className="title">{title}</h1>
+      <h1
+        className="title"
+        onClick={() => history.push(`${match.path}/${title.toLowerCase()}`)}
+      >{title}</h1>
       <div className="preview">
         {
           items.filter((item, index) => index < 4).map(item => {
@@ -18,4 +24,4 @@ const CollectionPreview = ({ title, items, routeName }) => {
   )
 }
 
-export default CollectionPreview
+export default withRouter(CollectionPreview)
