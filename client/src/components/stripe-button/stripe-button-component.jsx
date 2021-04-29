@@ -39,7 +39,7 @@ const StripButton = ({ price, onPaymentUnsuccessful, onPaymentSuccessful, curren
         <StripeCheckout
         name='Clothing House Ltd.'
         description={`Your total is ₹${price}`}
-        label='Proceed to Checkout'
+        label='Proceed to Pay'
         image='https://svgshare.com/i/CUz.svg'
         shippingAddress
         billingAddress 
