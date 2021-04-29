@@ -1,0 +1,21 @@
+@media screen and (max-width:768px) {
+  div.contact-page {
+    margin: 8px;
+    
+    h3.contact-heading{
+      font-size: 30px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.contact-page {
+  margin: 0 15vw;
+
+  .contact-heading {
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: .3px;
+    text-transform: capitalize;
+  }
+}

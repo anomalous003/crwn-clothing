@@ -16,6 +16,7 @@ import ShopPage from './pages/shop/shop-component'
 import Header from './components/header/header-component'
 import SignInPage from './pages/sign-in-sign-up/sign-in-sign-up-component'
 import CheckoutPage from './pages/checkout/checkout-page-component'
+import ContactPage from './pages/contact/contact-page-component'
 
 const App = ({ checkUserSession, currentUser, cartItems,updateFirestoreCartItems }) => {
   
@@ -36,6 +37,7 @@ const App = ({ checkUserSession, currentUser, cartItems,updateFirestoreCartItems
         <Route path="/shop" component={ShopPage} />
         <Route path="/sign-in" render={() => currentUser ? <Redirect to='/' /> : <SignInPage />} />
         <Route exact path='/checkout' component={ CheckoutPage }/>
+        <Route exact path='/contact' component={ ContactPage }/>
       </Switch>
     </div>
   )   

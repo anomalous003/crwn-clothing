@@ -1,0 +1,17 @@
+.about-us {
+  margin-top: 45px;
+  border-bottom: 1px solid black;
+
+  .about-us__title {
+    font-size: 24px;
+    letter-spacing: .3px;
+    margin-bottom: 6px;
+  }
+
+  .description{
+    font-size: 20px;
+    letter-spacing: .3px;
+    padding: 0 2px;
+    margin-bottom: 50px;
+  }
+}

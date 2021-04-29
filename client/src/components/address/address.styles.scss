@@ -1,0 +1,42 @@
+@media screen and (max-width:768px) {
+  div.address-container{
+    margin: 50px 5px;
+
+    div.address-box {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+}
+
+.address-container {
+  margin-top: 60px;
+
+  .head-box {
+
+    .tagline{
+      text-align: center;
+      text-transform: capitalize;
+      font-weight: 600;
+      font-size: 30px;
+      letter-spacing: .3px;
+      margin-bottom: 10px;
+    }
+
+    .timing{
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+
+  .address-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    align-items: center;
+  }
+}
