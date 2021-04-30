@@ -23,7 +23,7 @@ const Map = () => {
   const [lng, setLng] = useState(73.83851517916388);
   const [lat, setLat] = useState(18.542538437728854);
   const [zoom, setZoom] = useState(13.5);
-  
+
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
@@ -47,6 +47,7 @@ const Map = () => {
     });
 
     return () => map.remove();
+    // eslint-disable-next-line
   }, []);
   
   return (

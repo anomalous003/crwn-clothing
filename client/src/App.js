@@ -1,6 +1,6 @@
 import './App.css';
 
-import React, { useEffect } from 'react'
+import React, { useEffect, lazy, Suspense } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 import { selectCurrentUser } from './redux/user/user-selectors'
@@ -11,14 +11,18 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import {selectCartItems} from './redux/cart/cart-selectors'
 
-import HomePage from './pages/homepage/homepage-component.jsx'
-import ShopPage from './pages/shop/shop-component'
 import Header from './components/header/header-component'
-import SignInPage from './pages/sign-in-sign-up/sign-in-sign-up-component'
-import CheckoutPage from './pages/checkout/checkout-page-component'
-import ContactPage from './pages/contact/contact-page-component'
+import Spinner from './components/spinner/spinner'
+import ErrorBoundary from './components/error-boundaries/boundaries'
 
-const App = ({ checkUserSession, currentUser, cartItems,updateFirestoreCartItems }) => {
+const HomePage = lazy(() => import('./pages/homepage/homepage-component.jsx')) 
+const ShopPage = lazy(() => import('./pages/shop/shop-component')) 
+const SignInPage = lazy(() => import('./pages/sign-in-sign-up/sign-in-sign-up-component')) 
+const CheckoutPage = lazy(() => import('./pages/checkout/checkout-page-component')) 
+const ContactPage = lazy(() => import('./pages/contact/contact-page-component')) 
+
+
+const App = ({ checkUserSession, currentUser, cartItems, updateFirestoreCartItems }) => {
   
   useEffect(() => {
     checkUserSession()   
@@ -33,11 +37,15 @@ const App = ({ checkUserSession, currentUser, cartItems,updateFirestoreCartItems
     <div>
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} /> 
-        <Route path="/shop" component={ShopPage} />
-        <Route path="/sign-in" render={() => currentUser ? <Redirect to='/' /> : <SignInPage />} />
-        <Route exact path='/checkout' component={ CheckoutPage }/>
-        <Route exact path='/contact' component={ ContactPage }/>
+        < ErrorBoundary>
+          <Suspense fallback={<Spinner />}>
+            <Route exact path="/" component={HomePage} /> 
+            <Route path="/shop" component={ShopPage} />
+            <Route path="/sign-in" render={() => currentUser ? <Redirect to='/' /> : <SignInPage />} />
+            <Route exact path='/checkout' component={ CheckoutPage }/>
+            <Route exact path='/contact' component={ ContactPage }/>
+          </Suspense>
+        </ErrorBoundary>
       </Switch>
     </div>
   )   
