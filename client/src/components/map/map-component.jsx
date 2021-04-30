@@ -9,7 +9,7 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 
 mapboxgl.workerClass = MapboxWorker;
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWRpdHlhLTAwMyIsImEiOiJja28ybXkxYmIwMGg1MnZteDlldTUwMDQxIn0.uYYPTrQeaifJkS19uk8jbg';
+mapboxgl.accessToken = '';
 
 
 const Map = () => {
