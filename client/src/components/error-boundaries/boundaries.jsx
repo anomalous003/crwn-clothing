@@ -19,7 +19,7 @@ export class ErrorBoundary extends Component {
     return this.state.isError ? (
       <div className="error-image-overlay">
         <div className="error-image-container"></div>
-        <h2 className="error-image-text">Sorry, the page is broken. Try again</h2>
+        <h2 className="error-image-text">Sorry, cannot fetch the page currently.</h2>
       </div>
     ) : this.props.children
   }
