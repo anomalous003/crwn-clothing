@@ -23,6 +23,15 @@
     border: 1px solid black;
   }
 
+  &.added-to-cart{
+    background-color: #3ade22;
+    color: black;
+  
+    &:hover {
+      border: none;
+    }
+  }
+
   &.signIn {
     color: white;
     background-color: black;

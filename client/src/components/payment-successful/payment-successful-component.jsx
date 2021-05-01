@@ -15,4 +15,5 @@ const PaymentSuccessful = () => {
     )
 }
 
+
 export default PaymentSuccessful

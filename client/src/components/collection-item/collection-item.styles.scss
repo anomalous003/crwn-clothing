@@ -7,6 +7,11 @@
       opacity: 0.9;
       min-width: unset;
       padding: 0 10px;
+
+    }
+
+    button.added-to-cart {
+      opacity: 1;
     }
 
     &:hover{
@@ -43,6 +48,11 @@
     position: absolute;
     top: 255px;
     display: none;
+  }
+
+  .added-to-cart{
+    display: flex;
+    opacity: 1;
   }
 
   &:hover {

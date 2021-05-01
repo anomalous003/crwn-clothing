@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 
 import StripeCheckout from 'react-stripe-checkout';
-import SignInPopup from '../sign-in-popup/sign-in-popup-component'
 
 import { createStructuredSelector } from 'reselect'
 import { connect } from 'react-redux'
@@ -16,6 +15,7 @@ const StripButton = ({ price, onPaymentUnsuccessful, onPaymentSuccessful, curren
     publishableKey = 'pk_test_51Ic7g0SHtgDZBOhuTLT6OOtFcEwQyjYvCqVCImWPE3z7atqL9MgcQ7UZuZHZ1ahgQtyYwIF6p55We4Mg5dwaGWzN00hWaEdhE7'
   
   const onToken = token => {
+    currentUser ? (
     axios({
       url: 'payment',
       method: 'post',
@@ -28,29 +28,25 @@ const StripButton = ({ price, onPaymentUnsuccessful, onPaymentSuccessful, curren
       setTimeout(() => onPaymentSuccessful(null), 2000);
     }).catch(error => {
       onPaymentUnsuccessful(false)
-    })
+    })) : (
+        onPaymentUnsuccessful(false)
+    )
   }
 
-
   return (
-  <>
-    {
-      currentUser ? (
-        <StripeCheckout
-        name='Clothing House Ltd.'
-        description={`Your total is ₹${price}`}
-        label='Proceed to Pay'
-        image='https://svgshare.com/i/CUz.svg'
-        shippingAddress
-        billingAddress 
-        amount={priceForStripe}
-        currency='INR'
-        token={onToken}
-        panelLabel={`Pay Now`}
-        stripeKey={publishableKey}
-        />) : <SignInPopup/>
-      }
-  </>    
+    <StripeCheckout
+    name='Clothing House Ltd.'
+    description={`Your total is ₹${price}`}
+    label='Proceed to Pay'
+    image='https://svgshare.com/i/CUz.svg'
+    shippingAddress
+    billingAddress 
+    amount={priceForStripe}
+    currency='INR'
+    token={onToken}
+    panelLabel={`Pay Now`}
+    stripeKey={publishableKey}
+    />     
   )
 }
 
