@@ -1,4 +1,4 @@
-# **Clothing House**  
+# **Clothing House**   ![Trillo](./client/src/assets/crown.svg)
 
 Clothing House is an e-commerce store where you can buy latest fashion stuff.
 
