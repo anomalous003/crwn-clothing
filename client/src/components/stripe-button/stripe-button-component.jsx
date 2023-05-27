@@ -3,19 +3,15 @@ import axios from 'axios'
 
 import StripeCheckout from 'react-stripe-checkout';
 
-import { createStructuredSelector } from 'reselect'
 import { connect } from 'react-redux'
-
-import { selectCurrentUser } from '../../redux/user/user-selectors'
 
 import { paymentUnsuccessful, paymentSuccessful } from '../../redux/checkout/checkout.actions'
 
-const StripButton = ({ price, onPaymentUnsuccessful, onPaymentSuccessful, currentUser }) => {
+const StripButton = ({ price, onPaymentUnsuccessful, onPaymentSuccessful,}) => {
   const priceForStripe = price * 100,
     publishableKey = 'pk_test_51Ic7g0SHtgDZBOhuTLT6OOtFcEwQyjYvCqVCImWPE3z7atqL9MgcQ7UZuZHZ1ahgQtyYwIF6p55We4Mg5dwaGWzN00hWaEdhE7'
   
   const onToken = token => {
-    currentUser ? (
     axios({
       url: 'payment',
       method: 'post',
@@ -28,9 +24,7 @@ const StripButton = ({ price, onPaymentUnsuccessful, onPaymentSuccessful, curren
       setTimeout(() => onPaymentSuccessful(null), 2000);
     }).catch(error => {
       onPaymentUnsuccessful(false)
-    })) : (
-        onPaymentUnsuccessful(false)
-    )
+    }) 
   }
 
   return (
@@ -55,8 +49,4 @@ const mapDispatchToProps = dispatch => ({
   onPaymentUnsuccessful: status => dispatch(paymentUnsuccessful(status))
 })
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(StripButton)
+export default connect(null, mapDispatchToProps)(StripButton)

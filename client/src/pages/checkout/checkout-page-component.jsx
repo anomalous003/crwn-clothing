@@ -35,7 +35,9 @@ const CheckoutPage = ({ cartItems, total, clearCart, isPaymentSuccessful }) => {
         <br />
         Exp: 01/24, CVV: 123
       </div>
-      <StripButton price={total * 20} />
+      {
+        cartItems.length === 0 ? null : <StripButton price={total * 20} />
+      }
       {
         isPaymentSuccessful ? (<PaymentSuccessful /> ) : (isPaymentSuccessful === false ? <PaymentUnsuccessful/> : null)
       }

@@ -42,11 +42,7 @@ const CollectionItem = ({ item, addItem, currentUser, cartItems }) => {
       {
         existingItem ? (
           <CustomButton className='added-to-cart'>ADDED TO CART</CustomButton>
-        ) : <CustomButton className='inverted' onClick={() =>  currentUser ? addItem(item) : openPopup() } >ADD TO CART</CustomButton>
-      }
-
-      {
-        signInStatus ? null : <SignInPopup showPopup={showPopup} closePopup={closePopup}>Please Sign-In to add items to cart</SignInPopup>
+        ) : <CustomButton className='inverted' onClick={() => addItem(item)} >ADD TO CART</CustomButton>
       }
     </div>
   )
